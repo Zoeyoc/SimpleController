@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<action-controller>
+    <interceptor>
+        <name>logWriter</name>
+        <class>
+            <name>interceptor.logWriter</name>
+            <method>log</method>
+        </class>
+    </interceptor>
+    
+    <!-- other interceptors -->
+	<action>
+		<name>login</name>
+		<class>
+			<name>action.LoginAction</name>
+			<method>login</method>
+		</class>
+		<interceptor-ref>
+		    <name>logWriter</name>
+		</interceptor-ref>
+		<result>
+			<name>success</name>
+			<type>forward</type>
+			<value>pages/success_view.xml</value>	
+		</result>
+		<result>
+			<name>fail</name>
+			<type>redirect</type>
+			<value>pages/login_fail.html</value>
+		</result>
+	</action>
+	<action>
+		<name>register</name>
+		<class>
+			<name>action.RegisterAction</name>
+			<method>register</method>
+		</class>
+		<result>
+			<name>success</name>
+			<type>forward</type>
+			<value>pages/register_success.html</value>
+		</result>
+		<result>
+			<name>fail</name>
+			<type>redirect</type>
+			<value>pages/register_fail.html</value>
+		</result>
+	</action>
+</action-controller>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OR-Mapping>
+	<jdbc>
+		<property>
+			<name>driver_class</name>
+			<value>org.sqlite.JDBC</value>
+		</property>
+		<property>
+			<name>url_path</name>
+			<value>jdbc:sqlite:e:/user.db</value>
+		</property>
+		<property>
+			<name>db_username</name>
+			<value>root</value>
+		</property>
+		<property>
+			<name>db_userpassword</name>
+			<value>0000</value>
+		</property>
+	</jdbc>
+	<class>
+		<name>UserBean</name>
+		<table>users</table>
+		<id>
+			<name>ID</name>
+		</id>
+		<property>
+			<name>id</name>
+			<column>id</column>
+			<type>Long</type>
+			<lazy>false</lazy>
+		</property>
+		<property>
+			<name>username</name>
+			<column>username</column>
+			<type>String</type>
+			<lazy>false</lazy>
+		</property>
+		<property>
+			<name>password</name>
+			<column>password</column>
+			<type>String</type>
+			<lazy>true</lazy>
+		</property>
+	</class>
+</OR-Mapping>
